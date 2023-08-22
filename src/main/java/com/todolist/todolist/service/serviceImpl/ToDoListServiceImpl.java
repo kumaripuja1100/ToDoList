@@ -42,6 +42,7 @@ public class ToDoListServiceImpl implements ToDoListService {
             toDoResponse.setHeading(x.getHeading());
             toDoResponse.setContent(x.getContent());
             toDoResponse.setStyle(x.getStyle());
+            toDoResponse.setId(x.getId());
             return  toDoResponse;
         } else {
             throw new RequestNotFound("Id does not exist in database");
@@ -58,7 +59,7 @@ public class ToDoListServiceImpl implements ToDoListService {
              toDoResponse.setHeading(data.getHeading());
              toDoResponse.setContent(data.getContent());
              toDoResponse.setStyle(data.getStyle());
-
+             toDoResponse.setId(data.getId());
              toDoResponselist.add(toDoResponse);
          }
 

@@ -14,4 +14,6 @@ public class ToDoResponse {
     private String content;
     private String style;
     private String color;
+
+    private long id;
 }
