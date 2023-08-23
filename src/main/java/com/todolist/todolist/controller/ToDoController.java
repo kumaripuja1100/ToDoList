@@ -12,7 +12,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/todo")
 @RequiredArgsConstructor
-
+@CrossOrigin(origins = "https://mytodowebsite.onrender.com/")
 public class ToDoController {
 
     private final ToDoListService toDoListService;
