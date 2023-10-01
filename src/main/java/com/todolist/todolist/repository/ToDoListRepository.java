@@ -14,5 +14,5 @@ public interface ToDoListRepository extends JpaRepository<UserData, Long>{
     UserData findUserDataById(Long id);
 
     @OrderBy("updateTime DESC")
-    List<UserData> findAllByOrderByUpdateTimeDesc();
+    List<UserData> findUserDataByUserId(String userId);
 }

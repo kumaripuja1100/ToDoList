@@ -1,21 +1,16 @@
-package com.todolist.todolist.dao.request;
+package com.todolist.todolist.dao.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
-import java.util.Date;
-
 @Data
 @AllArgsConstructor
 @RequiredArgsConstructor
 @Builder
-public class ToDoRequest {
-    private String heading;
+public class RegisteredResponse {
     private String userId;
-    private String content;
-    private String style;
-    private String color;
-
+    private String firstName;
+    private String lastName;
 }

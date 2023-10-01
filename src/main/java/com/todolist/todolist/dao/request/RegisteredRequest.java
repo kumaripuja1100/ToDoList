@@ -5,17 +5,12 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
-import java.util.Date;
-
 @Data
 @AllArgsConstructor
 @RequiredArgsConstructor
 @Builder
-public class ToDoRequest {
-    private String heading;
+public class RegisteredRequest {
     private String userId;
-    private String content;
-    private String style;
-    private String color;
-
+    private String firstName;
+    private String lastName;
 }
