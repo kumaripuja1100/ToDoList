@@ -13,6 +13,7 @@ import java.util.Date;
 @Builder
 public class ToDoRequest {
     private String heading;
+    private String userId;
     private String content;
     private String style;
     private String color;

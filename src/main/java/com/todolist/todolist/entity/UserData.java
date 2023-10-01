@@ -21,7 +21,7 @@ public class UserData {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
+    private String userId;
     private String heading;
     private String content;
     private String style;

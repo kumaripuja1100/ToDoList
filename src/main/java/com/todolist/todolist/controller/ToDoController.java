@@ -1,6 +1,8 @@
 package com.todolist.todolist.controller;
 
+import com.todolist.todolist.dao.request.RegisteredRequest;
 import com.todolist.todolist.dao.request.ToDoRequest;
+import com.todolist.todolist.dao.response.RegisteredResponse;
 import com.todolist.todolist.dao.response.ToDoResponse;
 import com.todolist.todolist.service.ToDoListService;
 import lombok.RequiredArgsConstructor;
@@ -21,15 +23,23 @@ public class ToDoController {
     public ResponseEntity<Long> addToDo(@RequestBody ToDoRequest request) {
         return ResponseEntity.ok().body(toDoListService.addToDo(request));
     }
-
+    @PostMapping("/add_user")
+    public ResponseEntity addUser(@RequestBody RegisteredRequest request){
+        toDoListService.addUser(request);
+        return ResponseEntity.ok().build();
+    }
+    @GetMapping("/view_user/{userId}")
+    public ResponseEntity<RegisteredResponse> viewUser(@PathVariable("userId") String request){
+        return ResponseEntity.ok().body(toDoListService.viewUser(request));
+    }
     @GetMapping("/view_ToDo/{id}")
     public ResponseEntity<ToDoResponse> viewToDo(@PathVariable("id") Long request) {
         return ResponseEntity.ok().body(toDoListService.viewToDo(request));
     }
 
-    @GetMapping("/viewAll_ToDo")
-    public ResponseEntity<List<ToDoResponse>> viewAll() {
-        return ResponseEntity.ok().body(toDoListService.viewAllToDo());
+    @GetMapping("/viewAll_ToDo/{userId}")
+    public ResponseEntity<List<ToDoResponse>> viewAll(@PathVariable("userId") String request) {
+        return ResponseEntity.ok().body(toDoListService.viewAllToDo(request));
     }
 
     @PutMapping("/update_ToDo/{id}")
