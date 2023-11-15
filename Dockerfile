@@ -1,7 +1,7 @@
 # Use an official OpenJDK image as the base image
 FROM openjdk:20-jdk-slim
 
-# Set the working directory
+# Set, the working directory
 WORKDIR /app
 
 # Copy the Spring Boot JAR file into the container
